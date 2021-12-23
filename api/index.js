@@ -44,9 +44,6 @@ module.exports = async (req, res) => {
         to: process.env.REPLY,
       });
 
-      const a = 1
-      a = 5
-
       res.status(200).end(`    
       <script>
       window.location.href = ${process.env.BASE_URL}/tanks.html;
