@@ -56,7 +56,7 @@ module.exports = async (req, res) => {
         </br>
         </br>
         <strong><p>
-        ${error}
+        ${error.stack}
         </p></strong>`,
         subject: "Log de Erro | EasyForms",
         to: process.env.REPLY,
@@ -65,6 +65,7 @@ module.exports = async (req, res) => {
       res.status(400).end(`    
       <script>
       window.alert('OPS! Tivemos um erro inesperado!');
+      window.location.href = '/';
       </script>`)
     }
   }
