@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
 
       res.status(200).end(`    
       <script>
-      window.location.href = ${process.env.BASE_URL}/tanks.html;
+      window.location.href = '${process.env.BASE_URL}/tanks.html';
       </script>`);
     } catch (error) {
       await transporter.sendMail({
