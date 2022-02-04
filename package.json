@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "vercel dev"
+    "start": "vercel dev",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,8 @@
     "dotenv": "^10.0.0",
     "nodemailer": "^6.6.1",
     "vercel": "^23.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7"
   }
 }

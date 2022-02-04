@@ -29,13 +29,15 @@ module.exports = async (req, res) => {
 
   if (message) {
     try {
-      await transporter.sendMail({
+       const email = await transporter.sendMail({
         from: sender,
         html: message,
         subject: "Formulário de contato",
         to: destiny,
         replyTo: sender,
       });
+
+      if (req.isTest) return email
 
       await transporter.sendMail({
         from: `EasyForms API <${process.env.EMAIL}>`,
@@ -61,11 +63,12 @@ module.exports = async (req, res) => {
         subject: "Log de Erro | EasyForms",
         to: process.env.REPLY,
       });
-      console.log(error) 
+      console.log(error);
+      if (req.isTest) return error
       res.status(400).end(`    
       <script>
       window.alert('OPS! Tivemos um erro inesperado!');
-      </script>`)
+      </script>`);
     }
   }
 };
