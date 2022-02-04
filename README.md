@@ -1,3 +1,6 @@
+
+![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)
+
 # EasyForms
 
 <div align="center">

@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
 
       await transporter.sendMail({
         from: `EasyForms API <${process.env.EMAIL}>`,
-        html: `<p>O usuário <strong>${req.body.name} - ${req.body.email}</strong> acabou de utilizar nossa api.</p>`,
+        html: `<p>O usuário <strong>${req.body.name} - ${req.body.email}</strong> enviou a mensagem para <strong>${req.body.destiny}</strong> através de nossa api.</p>`,
         subject: "Log de Uso | EasyForms",
         to: process.env.REPLY,
       });
@@ -58,7 +58,7 @@ module.exports = async (req, res) => {
         </br>
         </br>
         <strong><p>
-        ${error}
+        ${error.stack}
         </p></strong>`,
         subject: "Log de Erro | EasyForms",
         to: process.env.REPLY,
